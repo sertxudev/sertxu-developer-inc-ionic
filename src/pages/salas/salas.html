@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"rooms" | translate}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="saldo()">
+        <ion-icon name="logo-usd" style="font-size: 2em;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let sala of salas" (click)="show(sala.id)">
+    <img src="assets/salas/{{sala.foto}}" />
+    <div class="card-title">{{ "sala_" + sala.id | translate }}</div>
+    <h6 class="card-subtitle">{{sala.precio}} €/{{ "hour" | translate }}</h6>
+  </ion-card>
+
+</ion-content>

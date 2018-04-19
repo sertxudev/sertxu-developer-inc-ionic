@@ -1,0 +1,8 @@
+{
+  "name": "Sertxu Developer Inc",
+  "app_id": "5e3e9953",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

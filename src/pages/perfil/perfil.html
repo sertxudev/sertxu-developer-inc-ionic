@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"profile" | translate}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()" class="action_nav">
+        <ion-icon name="log-out" style="font-size: 2em;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label color="primary" floating>{{"email" | translate}}</ion-label>
+    <ion-input type="email" [(ngModel)]="userData.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>{{"name" | translate}}</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>{{"surname" | translate}}</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.surname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>{{"password" | translate}}</ion-label>
+    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>{{"phone" | translate}}</ion-label>
+    <ion-input type="tel" [(ngModel)]="userData.phone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>{{"dni" | translate}}</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.dni"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>{{"birthday" | translate}}</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="userData.birthday"></ion-datetime>
+  </ion-item>
+
+  <div padding>
+    <button ion-button color="primary" (click)="guardar()" block>
+      <ion-icon name="done-all"></ion-icon>
+      &nbsp;&nbsp;{{"save" | translate}}
+    </button>
+  </div>
+
+</ion-content>

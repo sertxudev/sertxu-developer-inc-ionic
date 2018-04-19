@@ -1,0 +1,20 @@
+pagar-page {
+    .odd {
+        width: 50%;
+        float: right;
+    }
+
+    .even {
+        width: 50%;
+        float: left;
+    }
+
+    ion-item h3 {
+        white-space:normal;
+    }
+
+    span {
+        text-align: right;
+        display: block;
+    }
+}

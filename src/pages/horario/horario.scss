@@ -1,0 +1,15 @@
+horario-page {
+    .odd {
+        width: 50%;
+        float: right;
+    }
+
+    .even {
+        width: 50%;
+        float: left;
+    }
+
+    .list-md .item-block .item-inner {
+        border: none;
+    }
+}

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"home" | translate}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="perfil()" class="action_nav">
+        <ion-icon name="contact" style="font-size: 2em;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let noticia of noticias">
+    <ion-card-content>
+      <ion-card-title>
+        {{noticia.title}}
+      </ion-card-title>
+      <p>
+        {{noticia.description}}
+      </p>
+      <span>{{noticia.date | date:'hh:mm a dd/MM/y'}}</span>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

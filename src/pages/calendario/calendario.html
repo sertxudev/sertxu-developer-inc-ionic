@@ -1,0 +1,14 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"calendar" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-calendar 
+        [(ngModel)]="dia" 
+        [options]="options" 
+        (monthChange)="monthChange($event)"
+        (onChange)="onChange($event)">
+    </ion-calendar>
+</ion-content>

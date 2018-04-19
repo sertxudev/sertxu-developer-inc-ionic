@@ -1,0 +1,32 @@
+ion-content > * {
+    //overflow: auto!important;
+}
+
+/*.vertical-align {
+    height: 100vh;
+    margin-top: (40vh / 2);
+    transform: translateX(0);
+}*/
+
+.banner-image {
+    height: 50px;
+}
+
+.banner-container {
+    text-align: center;
+}
+
+.outer {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.scroll-content {
+    padding-bottom:0!important;
+}

@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"payment" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h6>{{"room" | translate}}:  <span>{{"sala_"+sala | translate}}</span></h6>
+    <h6>{{"day" | translate}}: <span>{{dia | date:'dd/MM/y'}}</span></h6>
+    <hr>
+    <h6>{{"horas_reservar" | translate}}</h6>
+
+    <ion-list>
+        <ion-item *ngFor="let detalle of detalles; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }">
+            <h2>{{detalle.hora}}:00</h2>
+            <h3>{{detalle.code | translate}}</h3>
+        </ion-item>
+    </ion-list>
+
+    <hr style="clear: both;">
+    <h6>{{"saldo_disponible" | translate}}: <span>{{saldo}} €</span></h6>
+    <h6>{{"precio_reserva" | translate}}: <span>{{precio_sala}} €</span></h6>
+    <h6>{{"total_pagar" | translate}}: <span>{{total_pagar}} €</span></h6>
+    <h6>{{"saldo_restante" | translate}}: <span>{{saldo_restante}} €</span></h6>
+
+    <div style="padding: 15px 0 0 0; margin: 0 0 35px 0;">
+        <button ion-button color="primary" (click)="pagar()" block [disabled]="errors">
+            &nbsp;&nbsp;{{"pay" | translate}}
+        </button>
+    </div>
+
+</ion-content>

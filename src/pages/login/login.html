@@ -1,0 +1,41 @@
+<ion-content padding scroll="false" class="vertical-align">
+
+  <div class="outer">
+    <div class="middle">
+
+        <div class="banner-container">
+          <img src="assets/banner.png" class="banner-image">
+        </div>
+
+        <ion-list>
+
+          <ion-item>
+            <ion-label color="primary" floating>{{"email" | translate}}</ion-label>
+            <ion-input type="email" [(ngModel)]="userData.email" name="email" #email="ngModel" email [required]="email.errors?.email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="primary" floating>{{"password" | translate}}</ion-label>
+            <ion-input type="password" [(ngModel)]="userData.password" clearOnEdit="false" name="password" #password="ngModel" required></ion-input>
+          </ion-item>
+
+          <div padding>
+            <button ion-button color="primary" (click)="login()" block  [disabled]="email.errors?.email || password.errors?.required">
+              <ion-icon name="log-in"></ion-icon>
+              &nbsp;&nbsp;{{"login" | translate}}
+            </button>
+            
+              <p style="text-align:center;margin-top:25px">
+                <a (click)="registrarse()" style="font-size:17px">{{"noaccount" | translate}}</a>
+                <!--<br>
+                <br>
+                <a (click)="forgot()" style="font-size:17px">{{"nopassword" | translate}}</a>-->
+              </p>
+          </div>
+
+        </ion-list>
+
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"hired" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let reserva of reservas; let index=index; let odd=odd; let even=even;" [ngClass]="{ odd: odd, even: even }">
+      <h3>{{"sala_"+reserva.sala | translate}}</h3>
+      <h4>{{reserva.fecha_inicial | date:'dd/MM/y'}}</h4>
+      <p>{{reserva.fecha_inicial | date:'hh:mm a'}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

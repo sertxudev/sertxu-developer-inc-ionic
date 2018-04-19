@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"register" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="vertical-align">
+
+      <div class="outer">
+        <div class="middle">
+
+            <div class="banner-container">
+              <img src="assets/banner.png" class="banner-image">
+            </div>
+
+            <ion-list>
+
+              <ion-item>
+                <ion-label color="primary" floating>{{"name" | translate}}</ion-label>
+                <ion-input type="text" [(ngModel)]="userData.nombre" name="name" #name="ngModel" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" floating>{{"surname" | translate}}</ion-label>
+                <ion-input type="text" [(ngModel)]="userData.apellidos" name="surname" #surname="ngModel" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" floating>{{"password" | translate}}</ion-label>
+                <ion-input type="password" [(ngModel)]="userData.password" clearOnEdit="false" name="password" #password="ngModel" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" floating>Repeat {{"password" | translate}}</ion-label>
+                <ion-input type="password" [(ngModel)]="userData.passwordAgain" clearOnEdit="false" name="passwordAgain" #passwordAgain="ngModel" [equalTo]="password" [required]="passwordAgain.errors?.equalTo || passwordAgain.errors?.required"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" floating>{{"email" | translate}}</ion-label>
+                <ion-input type="email" [(ngModel)]="userData.email" name="email" #email="ngModel" email [required]="email.errors?.email"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" floating>{{"phone" | translate}}</ion-label>
+                <ion-input type="tel" [(ngModel)]="userData.phone" name="phone" #phone="ngModel" phone="ES" [required]="phone.errors?.phone"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" floating>{{"dni" | translate}}</ion-label>
+                <ion-input type="text" [(ngModel)]="userData.dni" name="dni" #dni="ngModel" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" floating>{{"birthday" | translate}}</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="userData.birthday" name="birthday" #birthday="ngModel" required></ion-datetime>                
+              </ion-item>
+
+              <div padding>
+                <button ion-button color="primary" (click)="register()" block [disabled]="password.errors?.required || name.errors?.required || surname.errors?.required || email.errors?.email || password.errors?.required || passwordAgain.errors?.equalTo || phone.errors?.phone || dni.errors?.required || birthday.errors?.required">
+                  <ion-icon name="log-in"></ion-icon>&nbsp;&nbsp;{{"register" | translate}}</button>
+              </div>
+
+            </ion-list>
+
+        </div>
+      </div>
+
+    </ion-content>
